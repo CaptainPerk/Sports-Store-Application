@@ -27,7 +27,7 @@ namespace SportsStore.Infrastructure
         {
             IUrlHelper urlHelper = _urlHelperFactory.GetUrlHelper(ViewContext);
             TagBuilder result = new TagBuilder("div");
-            for (var i = 0; i <= PageModel.TotalPages; i++)
+            for (var i = 1; i <= PageModel.TotalPages; i++)
             {
                 TagBuilder tag = new TagBuilder("a");
                 tag.Attributes["href"] = urlHelper.Action(PageAction, new {productPage = i});
