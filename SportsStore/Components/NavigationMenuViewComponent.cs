@@ -1,12 +1,21 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using SportsStore.Models;
+using System.Linq;
 
 namespace SportsStore.Components
 {
     public class NavigationMenuViewComponent : ViewComponent
     {
-        public string Invoke()
+        private IProductRepository _productRepository;
+
+        public NavigationMenuViewComponent(IProductRepository productRepository)
         {
-            return "Hello from the Nav ViewComponent";
+            _productRepository = productRepository;
+        }
+
+        public IViewComponentResult Invoke()
+        {
+            return View(_productRepository.Products.Select(product => product.Category).Distinct().OrderBy(product => product));
         } 
     }
 }
