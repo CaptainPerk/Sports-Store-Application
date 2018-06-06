@@ -9,6 +9,5 @@ namespace SportsStore.Models
         public AppIdentityDbContext(DbContextOptions<AppIdentityDbContext> options) : base(options)
         {
         }
-
     }
 }
