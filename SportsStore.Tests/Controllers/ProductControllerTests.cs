@@ -7,7 +7,7 @@ using System;
 using System.Linq;
 using Xunit;
 
-namespace SportsStore.Tests
+namespace SportsStore.Tests.Controllers
 {
     public class ProductControllerTests
     {
