@@ -8,7 +8,7 @@ using System.Collections.Generic;
 using System.Linq;
 using Xunit;
 
-namespace SportsStore.Tests
+namespace SportsStore.Tests.ViewComponents
 {
     public class NavigationMenuViewComponentTests
     {

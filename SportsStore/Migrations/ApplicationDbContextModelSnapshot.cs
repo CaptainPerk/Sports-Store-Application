@@ -63,6 +63,8 @@ namespace SportsStore.Migrations
 
                     b.Property<bool>("RequestsGiftWrap");
 
+                    b.Property<bool>("Shipped");
+
                     b.Property<string>("State")
                         .IsRequired();
 
