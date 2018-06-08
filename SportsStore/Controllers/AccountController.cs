@@ -21,13 +21,13 @@ namespace SportsStore.Controllers
         [AllowAnonymous]
         public ViewResult Login(string returnUrl)
         {
-            return View(new LoginViewModel {ReturnUrl = returnUrl});
+            return View(new LoginModel {ReturnUrl = returnUrl});
         }
 
         [HttpPost]
         [AllowAnonymous]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Login(LoginViewModel loginViewModel)
+        public async Task<IActionResult> Login(LoginModel loginViewModel)
         {
             if (ModelState.IsValid)
             {
