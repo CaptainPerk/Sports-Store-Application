@@ -1,9 +1,11 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using SportsStore.Models;
 using System.Linq;
 
 namespace SportsStore.Controllers
 {
+    [Authorize]
     public class AdminController : Controller
     {
         private readonly IProductRepository _repository;
@@ -45,6 +47,13 @@ namespace SportsStore.Controllers
             }
 
             return RedirectToAction("Index");
+        }
+
+        [HttpPost]
+        public IActionResult SeedDatabase()
+        {
+            SeedData.EnsurePopulated(HttpContext.RequestServices);
+            return RedirectToAction(nameof(Index));
         }
     }
 }
